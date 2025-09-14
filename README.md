@@ -2,6 +2,7 @@
 
 An Airbnb-inspired web application where users can list properties, browse accommodations, and book stays. Built with Node.js, Express, MongoDB, and EJS/React (depending on your stack).
 
+
 ✨ Features
 
 🔑 User Authentication (Signup/Login using Passport.js/JWT)
@@ -20,6 +21,7 @@ An Airbnb-inspired web application where users can list properties, browse accom
 
 🛠️ Tech Stack
 
+
 Frontend: HTML, CSS, Bootstrap (or React if using SPA)
 
 Backend: Node.js, Express.js
@@ -32,6 +34,7 @@ Deployment: Render / Vercel / Heroku
 
 Extras: Cloudinary for image uploads, Mapbox for geolocation (if added)
 
+
 📂 Project Structure
 📦 airbnb-clone
  ┣ 📂 models       # MongoDB Schemas
@@ -43,9 +46,10 @@ Extras: Cloudinary for image uploads, Mapbox for geolocation (if added)
  ┣ 📜 package.json
  ┗ 📜 README.md
 
+
 🚀 Getting Started
 1️⃣ Clone the repository
-git clone https://github.com/yourusername/airbnb-clone.git
+git clone https://github.com/kartikbhadane15/wanderlust-stays.git
 cd airbnb-clone
 
 2️⃣ Install dependencies
@@ -76,6 +80,7 @@ Password: 123456
 📸 Screenshots
 
 (Add some screenshots of your project UI here)
+
 
 🤝 Contributing
 
