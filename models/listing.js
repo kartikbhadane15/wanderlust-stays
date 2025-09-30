@@ -30,7 +30,7 @@ const listingSchema = new Schema({
 
 listingSchema.post("findOneAndDelete", async function (listing) {
   if (listing) {
-    await mongoose.model("Review").deleteMany({ _id: { $in: doc.reviews } });
+    await Review.deleteMany({ _id: { $in: doc.reviews } });
   }
 });
 
