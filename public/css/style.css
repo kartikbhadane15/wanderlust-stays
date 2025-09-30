@@ -60,7 +60,7 @@ body {
 }
 
 /* Cards */
-.card {
+.listings-card {
     border: none !important;
     margin-bottom: 2rem;
 }
