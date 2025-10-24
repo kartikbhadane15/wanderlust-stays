@@ -36,7 +36,8 @@ router.get(
     let { id } = req.params;
     const listing = await Listing.findById(id).populate("reviews");
     if (!listing) {
-      throw new ExpressError(404, "Listing Not Found");
+      req.flash("error", "Listing you requested for does not exist!");
+      return res.redirect("/listings");
     }
     res.render("listings/show.ejs", { listing });
   })
@@ -49,6 +50,7 @@ router.post(
   wrapAsync(async (req, res) => {
     const newListing = new Listing(req.body.listing);
     await newListing.save();
+    req.flash("success", "Successfully created a new listing!");
     res.redirect("/listings");
   })
 );
@@ -60,8 +62,10 @@ router.get(
     let { id } = req.params;
     const listing = await Listing.findById(id);
     if (!listing) {
-      throw new ExpressError(404, "Listing Not Found");
+      req.flash("error", "Listing you requested for does not exist!");
+      return res.redirect("/listings");
     }
+    req.flash("success", "Successfully loaded edit form!");
     res.render("listings/edit.ejs", { listing });
   })
 );
@@ -80,6 +84,7 @@ router.put(
     if (!updatedListing) {
       throw new ExpressError(404, "Listing Not Found");
     }
+    req.flash("success", "Successfully updated the listing!");
     res.redirect(`/listings/${id}`);
   })
 );
@@ -93,6 +98,7 @@ router.delete(
     if (!deletedListing) {
       throw new ExpressError(404, "Listing Not Found");
     }
+    req.flash("success", "Successfully deleted the listing!");
     res.redirect("/listings");
   })
 );
